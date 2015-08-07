@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="twinkle" size="100.000000 93.227089" />
+    <ImageTarget name="triangle" size="100.000000 92.857140" />
+    <ImageTarget name="star" size="100.000000 98.019798" />
+    <ImageTarget name="square" size="100.000000 91.705070" />
+    <ImageTarget name="pentagon" size="100.000000 97.379913" />
+    <ImageTarget name="hexagram" size="100.000000 84.210526" />
+    <ImageTarget name="hexagon" size="100.000000 89.270386" />
+    <ImageTarget name="heart" size="100.000000 95.833336" />
+    <ImageTarget name="circle" size="100.000000 94.258369" />
+    <ImageTarget name="arrow" size="100.000000 93.518517" />
+    <ImageTarget name="imageLicenseLogo" size="100.000000 86.324783" />
+  </Tracking>
+</QCARConfig>
