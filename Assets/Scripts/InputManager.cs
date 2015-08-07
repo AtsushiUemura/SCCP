@@ -5,7 +5,9 @@ using System.Threading;
 
 public class InputManager : MonoBehaviour
 {
-    SerialPort stream = new SerialPort("COM3", 9600);
+    public int port;
+
+    SerialPort stream;
 
     public bool rightBool;
     public bool leftBool;
@@ -41,6 +43,7 @@ public class InputManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        stream = new SerialPort("COM" + port.ToString(), 9600);
         OpenConnection();
     }
 
@@ -49,6 +52,7 @@ public class InputManager : MonoBehaviour
     {
         string result = "";
         result = stream.ReadLine();
+
         Debug.Log(result);
         if (result == "A")
             action = true;
