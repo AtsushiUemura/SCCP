@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour {
         time -= Time.deltaTime;
         if (time <= 0)
         {
-            FadeManager.Instance.LoadLevel("SCCP", 2.0f);
+           Application.LoadLevel("SCCP");
         }
 	}
 }

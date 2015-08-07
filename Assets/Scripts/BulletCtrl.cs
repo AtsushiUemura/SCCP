@@ -15,6 +15,7 @@ public class BulletCtrl : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip audioClip;
 
+    //弾生成
     public void BulletCreate()
     {
         if (inputManager.action && flag)
@@ -23,8 +24,18 @@ public class BulletCtrl : MonoBehaviour
             Vector3 pos = transform.position.normalized;
             pos.y = 0;
             flag = false;
-            instance = Instantiate(prefab, pos+offset, Quaternion.identity) as GameObject;
-            instance.GetComponent<Rigidbody>().AddForce(pos*bulletSpeed, ForceMode.VelocityChange);
+            instance = Instantiate(prefab, pos + offset, Quaternion.identity) as GameObject;
+            instance.GetComponent<Rigidbody>().AddForce(pos * bulletSpeed, ForceMode.VelocityChange);
+        }
+    }
+
+    //死亡処理
+    public void OnDead()
+    {
+        if (HP <= 0)
+        {
+            HP = 0;
+            Debug.Log("Dead!");
         }
     }
 
@@ -41,5 +52,6 @@ public class BulletCtrl : MonoBehaviour
     void Update()
     {
         BulletCreate();
+        OnDead();
     }
 }
