@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿//GameObject
+
+using UnityEngine;
 using System.Collections;
 
-public class BulletRotate : MonoBehaviour
-{
+public class PlayerCtrl : MonoBehaviour {
 
     private InputManager inputManager;
     public Vector2 rotate;
@@ -15,15 +16,13 @@ public class BulletRotate : MonoBehaviour
             transform.Rotate(0, rotate.y, 0);
     }
 
-    // Use this for initialization
-    void Start()
-    {
+	// Use this for initialization
+	void Start () {
         inputManager = FindObjectOfType<InputManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+	}
+	
+	// Update is called once per frame
+	void Update () {
         RotateCtrl();
-    }
+	}
 }

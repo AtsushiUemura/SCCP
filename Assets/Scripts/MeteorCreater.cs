@@ -12,7 +12,7 @@ public class MeteorCreater : MonoBehaviour {
     //隕石を降らせる
     public void MeteorRain()
     {
-        if (inputManager.action || flag)
+        if (inputManager.action && flag)
         {
             flag = false; //隕石生成不可能
             int rand = Random.Range(0, meteor.Length); //ランダムで隕石の種類を決定

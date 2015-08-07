@@ -4,7 +4,7 @@ using System.Collections;
 public class BulletStatus : MonoBehaviour
 {
 
-    private BulletCtrl bulletCtrl;
+    private PlayerStatus playerStatus;
     private ExplodeCtrl explodeCtrl;
 
     void OnTriggerEnter(Collider other)
@@ -12,7 +12,7 @@ public class BulletStatus : MonoBehaviour
         if (other.CompareTag("Target"))
             other.GetComponent<TargetBehaver>().ParticleCreater();
         explodeCtrl.Explode(transform.position);
-        bulletCtrl.instance = null;
+        playerStatus.bullet_instance = null;
         Destroy(gameObject);
     }
 
@@ -20,7 +20,7 @@ public class BulletStatus : MonoBehaviour
     void Start()
     {
         explodeCtrl = FindObjectOfType<ExplodeCtrl>();
-        bulletCtrl = FindObjectOfType<BulletCtrl>();
+
     }
 
     // Update is called once per frame

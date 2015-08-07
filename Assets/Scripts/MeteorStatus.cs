@@ -5,24 +5,24 @@ public class MeteorStatus : MonoBehaviour
 {
 
     private MeteorCreater meteorCreater;
-    private BulletCtrl bulletCtrl;
+    private PlayerStatus playerStatus;
 
     //トリガー判定
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ground")) //もし、タグが"Ground"なら
         {
-            Destroy(gameObject); //破棄
+            Destroy(meteorCreater.instance); //破棄
             meteorCreater.instance = null;
             meteorCreater.flag = true;
         }
     }
 
-    // Use this for initialization
+    // Use this inisfor initialization
     void Start()
     {
         meteorCreater = FindObjectOfType<MeteorCreater>();
-        bulletCtrl = FindObjectOfType<BulletCtrl>();
+        playerStatus = FindObjectOfType<PlayerStatus>();
     }
 
     // Update is called once per frame
