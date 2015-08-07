@@ -54,6 +54,7 @@ public class InputManager : MonoBehaviour
         result = stream.ReadLine();
 
         Debug.Log(result);
+
         if (result == "A")
             action = true;
         else action = false;
